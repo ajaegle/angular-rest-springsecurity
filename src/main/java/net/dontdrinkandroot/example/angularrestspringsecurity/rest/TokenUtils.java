@@ -41,9 +41,9 @@ public class TokenUtils {
 
 		MessageDigest digest;
 		try {
-			digest = MessageDigest.getInstance("MD5");
+			digest = MessageDigest.getInstance("SHA-256");
 		} catch (NoSuchAlgorithmException e) {
-			throw new IllegalStateException("No MD5 algorithm available!");
+			throw new IllegalStateException("No SHA-256 algorithm available!", e);
 		}
 
 		return new String(Hex.encode(digest.digest(signatureBuilder.toString().getBytes())));
