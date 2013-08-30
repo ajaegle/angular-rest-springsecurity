@@ -19,10 +19,6 @@ import org.springframework.web.filter.GenericFilterBean;
 
 public class AuthenticationTokenProcessingFilter extends GenericFilterBean {
 
-	//
-	// @Autowired
-	// private TokenUtils tokenUtils;
-
 	private final AuthenticationManager authManager;
 
 	private final UserDetailsService userService;
