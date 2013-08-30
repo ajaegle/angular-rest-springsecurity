@@ -63,13 +63,15 @@
 	<!-- 
 		SPRING SECURITY SETUP
 	-->
-	
+	<bean id="encoder" class="org.springframework.security.crypto.password.StandardPasswordEncoder" />
+
 	<security:authentication-manager id="authenticationManager">
 		<security:authentication-provider>
 			<security:user-service id="userService">
-				<security:user name="admin" password="admin" authorities="admin, user" />
-				<security:user name="user" password="user" authorities="user" />
+				<security:user name="admin" password="20460e23c3322b4e27ee8048250a66ae7d487a7e77cc80d284b4caaa56d9b6ce3c3d98481da1462e" authorities="admin, user" />
+				<security:user name="user" password="020759b5adb8373064e2da2fb2ced125f1be8ba252aeee20072d8e8c5914129b764b41228f49f0d1" authorities="user" />
 			</security:user-service>
+			<security:password-encoder ref="encoder"/>
 		</security:authentication-provider>
 	</security:authentication-manager>
 
